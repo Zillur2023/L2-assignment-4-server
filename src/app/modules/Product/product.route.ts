@@ -8,15 +8,7 @@ const router = Router();
 
 router.get("/max-price", ProductControllers.getMaxPrice);
 router.get("/", ProductControllers.getAllProudcts);
-router.post(
-  "/create-product",
-  upload.single("image"),
-  (req: Request, res: Response, next: NextFunction) => {
-    req.body = JSON.parse(req.body.data);
-    next();
-  },
-  ProductControllers.createProduct
-);
+router.post("/create-product", ProductControllers.createProduct);
 router.get(
   "/productByCategory/:category",
 

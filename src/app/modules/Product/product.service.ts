@@ -4,23 +4,11 @@ import AppError from "../../errors/AppError";
 import { Category } from "../Category/category.model";
 import { allProudctsSearchableFields, TProduct } from "./product.interface";
 import { Product } from "./product.model";
-import { sendImageToCloudinary } from "../../utils/sendImageToCloudinary";
 
-const createProductIntoDB = async (file:any,payload: TProduct) => {
-  // console.log({file})
+const createProductIntoDB = async (payload: TProduct) => {
   const category = await Category.findById(payload.category)
   if(!category) {
     throw new AppError(httpStatus.NOT_FOUND, 'This category not found')
-  }
-  if (file) {
-    const imageName = `${payload.name}${Date.now()}`;
-    const path = file?.path;
-
-    //send image to cloudinary
-    console.log({path})
-    const { secure_url } = await sendImageToCloudinary(imageName, path);
-    console.log({secure_url})
-    payload.image = secure_url as string;
   }
   const result = await Product.create(payload);
 

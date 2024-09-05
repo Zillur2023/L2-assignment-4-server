@@ -23,7 +23,7 @@ const createPaymentIntoDB = async (transactionId: string, status: string) => {
   }
 
   // const filePath = join(__dirname, './views/confirmation.html')
-  const filePath = join(__dirname, '../../../public/confirmation.html')
+  const filePath = join(__dirname, './views/confirmation.html')
   let template = readFileSync(filePath,'utf-8')
 
   template = template.replace(' {{message}} ', message)

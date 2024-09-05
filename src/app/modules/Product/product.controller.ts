@@ -5,8 +5,7 @@ import { ProductServices } from "./product.service";
 
 
 const createProduct = catchAsync(async (req, res) => {
-    console.log('req.file',req.file)
-    const result = await ProductServices.createProductIntoDB(req.file,req.body)
+    const result = await ProductServices.createProductIntoDB(req.body)
 
     sendResponse(res, {
         statusCode: httpStatus.OK,
