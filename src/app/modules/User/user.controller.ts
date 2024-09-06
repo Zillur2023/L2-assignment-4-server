@@ -7,7 +7,6 @@ const createUser = catchAsync(async (req, res) => {
     // const { password, student: studentData } = req.body;
   
     const result = await UserServices.createUserIntoDB(req.body);
-    // console.log('userCtrl --->', result)
   
     sendResponse(res, {
       statusCode: httpStatus.OK,

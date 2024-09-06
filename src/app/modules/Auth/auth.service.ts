@@ -54,7 +54,6 @@ const loginUser = async (payload: TLoginUser) => {
       config.jwt_refresh_secret as string,
       config.jwt_refresh_expires_in as string,
     );
-    // console.log('backEnd user --->',jwtPayload,)
 
     const user = {
       // _id: isUserExist?._id,
@@ -73,7 +72,6 @@ const loginUser = async (payload: TLoginUser) => {
 
   const refreshToken = async (token: string) => {
     // checking if the given token is valid
-    // console.log({token})
     const decoded = verifyToken(token, config.jwt_refresh_secret as string);
   
     const { email, iat } = decoded;

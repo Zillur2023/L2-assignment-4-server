@@ -5,7 +5,6 @@ import exp from "constants";
 import { paymentServices } from "./payment.service";
 
 const createPayment = catchAsync(async (req, res) => {
-  // console.log("req.params.transactionId",req.query)
   const { transactionId, status } = req.query;
   const result = await paymentServices.createPaymentIntoDB(
     transactionId as string, status as string

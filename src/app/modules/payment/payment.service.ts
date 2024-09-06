@@ -5,7 +5,6 @@ import { readFileSync } from "fs";
 
 const createPaymentIntoDB = async (transactionId: string, status: string) => {
   const verifyResponse = await verifyPayment(transactionId);
-  // console.log({ verifyResponse });
 
   let result;
   let message;

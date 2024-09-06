@@ -78,7 +78,6 @@ const getProductByCategory = catchAsync(async (req, res) => {
 
 const getMaxPrice = catchAsync(async (req, res) => {
     const result = await ProductServices.getMaxPriceFromDB()
-    console.log({result})
 
     sendResponse(res, {
         statusCode: httpStatus.OK,

@@ -17,7 +17,6 @@ const createOrder = catchAsync(async (req, res) => {
 })
 const orderbyTransactionId = catchAsync(async (req, res) => {
     const {transactionId} = req.params
-    console.log({transactionId})
     const result = await OrderServices.orderbyTransactionIdFromDB(transactionId)
 
     sendResponse(res, {

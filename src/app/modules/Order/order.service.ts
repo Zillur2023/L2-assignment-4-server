@@ -50,17 +50,13 @@ const createOrderIntoDB = async (OrderData:TOrder) => {
     }
 
    const paymentSession = await initiatePayment(paymentData)
-   console.log({paymentSession,paymentData})
-    // console.log('ORDER --->', order)
 
     // return {paymentSession,paymentData};
     return {paymentSession,paymentData};
 }
 
 const orderbyTransactionIdFromDB = async(transactionId:string) => {
-    console.log('transactionIdResult', transactionId)
     const result = await Order.findOne({transactionId})
-    console.log('transactionIdResult', result)
 
     return result
 

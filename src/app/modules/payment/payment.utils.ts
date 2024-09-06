@@ -29,7 +29,6 @@ export const initiatePayment = async (paymentdata: any) => {
     cus_phone: paymentdata.customerPhone,
     type: "json",
   });
-  // console.log('resData --->', response.data)
 
   return response.data;
   

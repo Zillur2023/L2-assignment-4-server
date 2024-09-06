@@ -84,10 +84,8 @@ const getProductByCategoryFromDB = async ({ category, query }:any) => {
 
 const getMaxPriceFromDB = async () => {
   const products = await Product.find();
-  console.log({products})
 
   const result = Math.max(...products.map((product:any) => product.price))
-  console.log('maxPrice',result)
 
   return result;
 };

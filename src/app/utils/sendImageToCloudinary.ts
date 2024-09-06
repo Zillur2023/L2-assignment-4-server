@@ -27,7 +27,6 @@ export const sendImageToCloudinary = (
         try {
           // Delete the file asynchronously after resolving the upload promise
           await fs.unlink(path);
-          console.log('File is deleted.');
         } catch (err) {
           console.error('Error deleting file:', err);
         }
